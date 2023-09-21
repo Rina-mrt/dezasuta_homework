@@ -1,0 +1,350 @@
+@charset "utf-8";
+
+/* cssリセット */
+/* 今回は先生からもらったものを貼って対応、今までと違う箇所があるのでコメントあり */
+
+html,
+body,
+header,
+footer,
+main,
+section,
+h1,
+h2,
+h3,
+ul,
+li,
+p,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+    /* 全体で統一されていたので文字色指定 */
+    /* 他のページで異なるときはその限りではない（ケースバイケース） */
+    color: #4f260b;
+    /* 游明朝の入っているcss（検索「游明朝 font-family指定方法」かけて持ってくればよい） */
+    font-family: "A1 Mincho", "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+        "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+        "ＭＳ 明朝", serif;
+    /* 文字間のカーニング（V/Aの方）、paltはメトリクス */
+    font-feature-settings: "palt";
+    scroll-behavior: smooth;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    /* アニメーションするcss  今回「0.3secでアニメーションして」*/
+    /* 何か変化があった場合、0.3secでアニメーションしてくれる */
+    transition: 0.3s;
+}
+
+/* のっかると追加されるcss 〜:hoverで〜にのるとという意味*/
+a:hover {
+    /* 半透明 不透明を0〜1で指定（1がイラレの100にあたるため、今回50ということ） */
+    /* 指定がなければ適当に入れる アンカーリンクは不透明度が無難 */
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+:not(#GALLERY #ACCESS) {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+/* ヘッダー */
+/* 後から振り返られるように、区分ごとに適宜コメントを入れていくこと */
+
+body {
+    background-color: #e8d9bf
+}
+
+#HEADER {
+    position: relative;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 7% 0 2.86%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo1 {
+    width: 22.7%;
+}
+
+.nav-menu {
+    width: 55%;
+}
+
+.nav-menu ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-menu ul li {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    font-weight: bold;
+    width: 105px;
+    text-align: center;
+    margin-right: 54px;
+    /* 1行の場合は行高は入れなくても良い */
+}
+
+.nav-menu ul li:last-child {
+    margin-right: 0;
+}
+
+.slider1 img {
+    width: 100%;
+    /* 画面幅に広げたい画像は、画面幅が大きくなったときにも対応できるよう考慮する */
+}
+
+
+/* ABOUT US */
+
+.au-text1 {
+    text-align: center;
+}
+
+.au1 {
+    font-size: 30px;
+    margin-top: 104px;
+}
+
+.au2 {
+    font-size: 82px;
+    margin-top: 52px;
+    line-height: 1.17;
+}
+
+.au3 {
+    font-size: 23px;
+    margin-top: 43px;
+    line-height: 1.65;
+}
+
+.au-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.au4 { 
+    /* 写真 */
+    max-width: 50%;
+}
+
+.au4 img {
+    border-radius : 0 0 82px 0;
+}
+
+.au-text2 {
+    margin-left: 8%;
+}
+
+.au5 {
+    /* ABOUT US 画像 */
+    width: 272px;
+    margin-top: 56px;
+}
+
+.au6 {
+    font-size: 46px;
+    line-height: 1.39;
+    margin-top: 47px;
+}
+
+.au7 {
+    max-width: 410px;
+    font-size: 16px;
+    line-height: 1.625;
+    text-align: justify;
+    margin-top: 23px;
+}
+
+
+/* MENU */
+
+.menu-title {
+    width: 151px;
+    margin: 90px auto 0;
+}
+
+.menu-list ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 33px;
+    text-align: left;
+}
+
+.menu-list ul li {  
+    width: 30%;
+}
+
+.menu-img {
+    border-radius : 0 42px 0 0;
+}
+
+h3 {
+    font-size: 38px;
+    margin-top: -13px;
+    margin-left: 13px;
+    color: #d30202;
+}
+
+.menu-text {
+    font-size: 17px;
+    line-height: 1.47;
+    text-align: justify;
+}
+
+
+/* GALLERY */
+
+.gallery-wrap {
+    overflow: hidden;
+}
+
+.gallery-title {
+    width: 245px;
+    margin: 70px auto 17px;
+}
+
+.slider2 {
+    display: flex;
+    width: 100vw;
+    margin: 0 calc(50% -50vw);
+}
+
+
+/* EVENT */
+
+.event-title {
+    width: 174px;
+    margin: 78px auto 31px;
+}
+
+.event-box {
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-width: 3.7px;
+    border-style: solid;
+    border-color: #4f260b;
+    max-width: 1000px;
+    font-size: 23px;
+    line-height: 1.96;
+    padding: 37px  158px;
+}
+
+.event1 {
+    display: flex;
+    align-items: left;
+}
+
+.event2 {
+    display: flex;
+    align-items: left;
+    margin-top: 13px;
+}
+
+.event3 {
+    display: flex;
+    align-items: left;   
+    margin-top: 13px;
+}
+
+.date {    
+    margin-right: 56px;
+}
+
+
+.content {
+    text-decoration: underline;
+    text-decoration-color: #4f260b;
+}
+
+
+/* ACCESS */
+
+.access-title {
+    width: 214px;
+    margin: 69px auto 38px;
+}
+
+iframe {
+    width: 100%;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    max-width: 100%;
+}
+
+.footer-wrap {
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding-top: 74px;
+    padding-left: 30px;
+}
+
+.logo2 {
+    width: 227px;
+}
+
+.address {
+    font-size: 20px;
+    margin-left: 51px;
+    line-height: 1.95;
+}
+
+.copyright {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 74px;
+    padding-bottom: 74px;
+}
+
+.to-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 125px;
+}
