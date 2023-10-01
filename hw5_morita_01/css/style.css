@@ -88,16 +88,16 @@ body {
     width: 22.7%;
 }
 
-.nav-menu {
+.pc-nav {
     width: 55%;
 }
 
-.nav-menu ul {
+.pc-nav ul {
     display: flex;
     justify-content: space-between;
 }
 
-.nav-menu ul li {
+.pc-nav ul li {
     color: #ffffff;
     font-size: 18px;
     font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
@@ -109,7 +109,7 @@ body {
     /* 1行の場合は行高は入れなくても良い */
 }
 
-.nav-menu ul li:last-child {
+.pc-nav ul li:last-child {
     margin-right: 0;
 }
 
@@ -155,12 +155,11 @@ body {
     margin-top: 100px;
 }
 
-.au4 { 
-    /* 写真 */
-    max-width: 50%;
+.au5-sp {
+    display: none;
 }
 
-.au4 img {
+.au4 {
     border-radius : 0 0 82px 0;
 }
 
@@ -287,7 +286,7 @@ h3 {
 
 .event3 {
     display: flex;
-    align-items: left;   
+    align-items: left;
     margin-top: 13px;
 }
 
@@ -311,6 +310,7 @@ h3 {
 
 iframe {
     width: 100%;
+    vertical-align: bottom;
 }
 
 
@@ -353,4 +353,304 @@ footer {
     right: 50px;
     bottom: 50px;
     width: 125px;
+}
+
+
+
+/* 5回目の講義 */
+
+.hamburger {
+    display: none;
+}
+
+.sp-nav {
+    display: none;
+}
+
+
+/* break point 1100px */
+/* グローバルナビゲーションが崩れる手前で適宜設定 */
+@media screen and (max-width: 1100px) {
+    /* pc版は表示しない */
+    .pc-nav {
+        display: none;
+    }
+
+    /* ハンバーガーメニューを作る */
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 23px;
+        right: 26px;
+        /* hoverしたら矢印から指マークに変わる */
+        cursor: pointer;
+        /* 実在する高さを出す */
+        height: 33px;
+        /* スマホメニューが表示されると、メニュー領域の下に表示 */
+        /* それを解消するためにふる */
+        /* 重なり順を制御するもの */
+        z-index: 9999;
+    }
+
+    /* 真ん中の線 */
+    .hamburger span {
+        background: #ffffff;
+        width: 33px;
+        height: 3px;
+        display: block;
+        position: relative;
+        /* 微調整分 */
+        top: 10px;
+        /* 変化前に入れる */
+        /* 変化後だと追加されてアニメーションが始まる…という動きになるから× */
+        transition: 0.3s;
+    }
+
+    /* 上下の線　位置は各々指定 */
+    .hamburger span::before, 
+    .hamburger span::after {
+        content: '';
+        background: #ffffff;
+        width: 33px;
+        height: 3px;
+        display: block;
+        position: absolute;
+        /* 上下の線にも忘れずに入れる */
+        transition: 0.3s;
+    }
+
+    .hamburger span::before {
+        top: 10px;
+    }
+
+    .hamburger span::after {
+        bottom: 10px;
+    }
+
+    /* ×を作る hamburger menuに２つclass名をふる*/
+    /* 回転数は調整可（360°の倍数を足す） */
+    .open span {
+        /* 透明 */
+        background: transparent;
+    }
+
+    .open span::before {
+        top: 0px;
+        transform: rotate(45deg);
+    }
+
+    .open span::after {
+        bottom: 0px;
+        transform: rotate(135deg);
+    }
+
+    /* ハンバーガーメニューを押した後のメニュー表示を作る */
+    .sp-nav {
+        /* 100vh=画面高さ全体 */
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .sp-nav ul {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        /* flexは横並びだけど、縦並びを制御するときにも使える */
+        /* 領域が決まっていて、配置していくときとか */
+        flex-direction: column;
+    }
+
+    .sp-nav ul li {
+        color: #ffffff;
+        font-size: 18px;
+        text-align: center;
+        padding: 15px 0;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+        "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    }
+
+    .au2 {
+        font-size: 72px;
+    }
+
+    .au3 {
+        font-size: 20px;
+    }
+
+    .au6 {
+        font-size: 38px;
+    }
+}
+
+
+/* 宿題5 スマホ版を作る */
+
+@media screen and (max-width: 767px) {
+    
+    /* header */
+    .logo1 {
+        width: 188px;
+    }
+
+
+    /* ABOUT US */
+    
+    .au1 {
+        font-size: 17px;
+        margin-top: 44px;
+    }
+    
+    .au2 {
+        font-size: 36px;
+        margin-top: 23px;
+        line-height: 1.16;
+    }
+    
+    .au3 {
+        font-size: 16px;
+        margin-top: 12px;
+        line-height: 1.875;
+    }
+    
+    .nl {
+        display: inline-block;
+    }
+
+    .au4 {
+        border-radius : 0 0 0 0;
+    }
+
+    .au-wrap {
+        display: block;
+    }
+    
+    .au5-sp {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .au5 {
+        display: none;
+    }
+
+    .au-text2 {
+        margin-left: 0;
+    }
+
+    .au6 {
+        font-size: 36px;
+        line-height: 1.25;
+        margin-top: 35px;
+    }
+    
+    .au7 {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.75;
+        margin: 28px auto 0;
+    }
+
+
+    /* MENU */
+
+    .menu-title {
+        margin: 50px auto 0;
+    }
+
+    .menu-list ul {
+        display: block;
+    }
+
+    .menu-list ul li {  
+        width: 80%;
+        margin-top: 47px;
+        padding: 0 13% 0;
+    }
+
+    .menu-list ul li:first-child {
+        margin-top: 17px;
+    }
+
+    .menu-list ul li img {  
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    h3 {
+        font-size: 40px;
+        margin-top: -26px;
+        margin-left: 13px;
+    }
+    
+    .menu-text {
+        font-size: 17px;
+        line-height: 1.59;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-title {
+        margin: 80px auto 15px;
+    }
+
+
+    /* EVENT */
+
+    .event-title {
+        margin: 30px auto 21px;
+    }
+
+    .event-box {
+        border-width: 3px;
+        font-size: 16px;
+        line-height: 1.125;
+        padding: 20px  27px;
+    }
+
+    .event1,
+    .event2,
+    .event3 {
+        display: block;
+    }
+
+
+    /* ACCESS */
+
+    .access-title {
+        margin: 26px auto 10px;
+    }
+
+
+    /* footer */
+
+    .footer-wrap {
+        display: block;
+        padding-top: 42px;
+        padding-left: 20px;
+    }
+
+    .address {
+        font-size: 18px;
+        margin-top: 31px;
+        margin-left: 20px;
+        line-height: 1.72;
+    }
+
+    .copyright {
+        font-size: 16px;
+        margin-top: 42px;
+        padding-bottom: 31px;
+    }
+
+    .to-top {
+        right: 10px;
+        bottom: 200px;
+        width: 100px;
+    }
 }
