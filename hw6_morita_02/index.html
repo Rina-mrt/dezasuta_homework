@@ -217,7 +217,7 @@
 
     <script>
         $(function () {
-            $('.hamburger').on('click', function (){
+            $('.hamburger, .sp-nav a').on('click', function (){
                 $('.sp-nav').fadeToggle();
                 $('.hamburger').toggleClass('open')
             });
@@ -240,13 +240,10 @@
                 responsive: [{
                     breakpoint: 768,
                     settings: {
-                        centerPadding: '40px',
-                        slidesToShow: 3,
                         arrows: false,
                     }}, {
                     breakpoint: 375,
                     settings: {
-                        centerPadding: '20px',
                         slidesToShow: 1,
                         arrows: false,
                     }}]

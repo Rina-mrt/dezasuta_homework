@@ -275,18 +275,15 @@ h3 {
 
 .event1 {
     display: flex;
-    align-items: left;
 }
 
 .event2 {
     display: flex;
-    align-items: left;
     margin-top: 13px;
 }
 
 .event3 {
     display: flex;
-    align-items: left;
     margin-top: 13px;
 }
 
@@ -597,14 +594,14 @@ footer {
     }
 
     h3 {
-        font-size: 40px;
+        font-size: 10.67vw;
         margin-top: -26px;
         margin-left: 13px;
     }
     
     .menu-text {
-        font-size: 17px;
         line-height: 1.59;
+        font-size: 4.53vw;
     }
 
 
@@ -625,7 +622,7 @@ footer {
 
     .event-box {
         border-width: 3px;
-        font-size: 16px;
+        font-size: 4.27vw;
         line-height: 1.125;
         padding: 20px  27px;
     }
@@ -664,14 +661,14 @@ footer {
     }
     
     .address {
-        font-size: 18px;
+        font-size: 4.8vw;
         margin-top: 31px;
         margin-left: 0;
         line-height: 1.72;
     }
 
     .copyright {
-        font-size: 16px;
+        font-size: 4.27vw;
         margin-top: 42px;
         padding-bottom: 31px;
     }
@@ -679,7 +676,7 @@ footer {
     .to-top {
         right: 10px;
         bottom: 10px;
-        width: 27%;
+        width: 100px;
     }
 }
 
@@ -715,6 +712,7 @@ footer {
     top: 35%;
     left: 200px;
     z-index: 2000;
+    cursor: pointer;
 }
 
 .n-arrow {
@@ -727,6 +725,7 @@ footer {
     top: 35%;
     right: 200px;
     z-index: 3000;
+    cursor: pointer;
 }
 
 
